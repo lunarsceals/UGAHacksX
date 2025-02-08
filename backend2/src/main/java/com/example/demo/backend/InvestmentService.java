@@ -1,3 +1,8 @@
+package com.example.demo.backend;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class InvestmentService {
     
     public double[] createArrayOfWorth(long apr, int years, double principal, double monthlyContribution) {

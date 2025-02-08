@@ -1,13 +1,17 @@
+package com.example.demo.backend;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
 @RequestMapping("/api")
-public class JsonApiApplication {
+public class JsonApiApplication<MyData> {
     
     private final InvestmentService investmentService = new InvestmentService();
 
@@ -25,5 +29,12 @@ public class JsonApiApplication {
     public String getInvestmentWorthWithDepreciation() {
         double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
         return investmentService.createJsonObjectWithArray(values);
+    }
+
+    @PostMapping("/data")
+    public String helloPost(@RequestBody MyData data) {
+        MyData receivedData = data;
+
+        return "Received data: " + receivedData.toString();
     }
 }
