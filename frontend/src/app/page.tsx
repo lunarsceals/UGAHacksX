@@ -49,6 +49,7 @@ const testData = [
 ];
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [graphData, setGraphData] = useState(null);
   const fetchData = () => {
     fetch("http://localhost:8080/api/investmentWithDepreciation")
