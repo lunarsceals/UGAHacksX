@@ -11,6 +11,9 @@
 ## Purpose of the Project
 This project aims to develop a user-friendly web application that allows users to calculate earnings from a mutual fund. Our goal is to provide a fun interactive way to visualize the growth of funds, and also to educate users on the importance of investing early.
 
+## Usage
+Users will enter the principal, appreciation, monthly contribution, and years invested. Additionally, users may enter a percent of depreciation if they want to account for factors like inflation. The website will then generate a graph showing the growth of their imaginary funds over the given period of time.  
+
 ## Tools Utilized
 - **Programming Languages:** Java, HTML, CSS, JavaScript 
 - **Frameworks:** React, Spring Boot 
@@ -19,7 +22,7 @@ This project aims to develop a user-friendly web application that allows users t
 
 ## Problems Encountered and Solutions
 1. **Sending Data:**
-   - **Problem:** Initial difficulty sending data/ utilzing methods from the backend to the frontend/backend to the frontend.
+   - **Problem:** Initial difficulty sending data/ utilizing methods from the backend to the frontend/backend to the frontend.
    - **Solution:** The team used a file to save data and format it as a JSON for frontend to read.
 
 2. **Creating JSON Objects:**
