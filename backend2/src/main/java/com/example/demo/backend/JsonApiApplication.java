@@ -39,11 +39,12 @@ public class JsonApiApplication<MyData> {
     }
 
     @GetMapping("/investmentWithDepreciation")
-    public List<monthlyValue> getInvestmentWorthWithDepreciation() {
-        monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
+    public car getInvestmentWorthWithDepreciation() {
+        //monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
         //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
         //String jsonResponse = investmentService.createJsonObjectWithArray(values);
-        return Arrays.asList(values);
+        car Miata = new car("Miata", 1989);
+        return Miata;
     }
 
     // @PostMapping("/data")
