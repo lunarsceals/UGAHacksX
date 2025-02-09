@@ -42,15 +42,17 @@ public class JsonApiApplication<MyData> {
 
     @GetMapping("/investmentWithDepreciation")
     public List<yearValue> getInvestmentWorthWithDepreciation() {
-        //monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
+    monthlyValue[] monthlyValues = investmentService.calculateMonthlyValues(11,0,20,1000,100);
         //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
         //String jsonResponse = investmentService.createJsonObjectWithArray(values);
-    List<yearValue> values = new ArrayList<yearValue>();
-    values.add(new yearValue(0, 1000));
-    values.add(new yearValue(1, 1100));
-    values.add(new yearValue(2, 1210));
+    List<yearValue> yearlyValues = new ArrayList<yearValue>();
+    int year = 0;
+    for(int i = 0; i < monthlyValues.length; i++){
+            yearlyValues.add(new yearValue((int)monthlyValues[i].totalValue, year));
+            year++;
+        }
        // car Miata = new car("Miata", 1989);
-        return values;
+        return yearlyValues;
     }
 
     // @PostMapping("/data")
