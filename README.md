@@ -1,4 +1,4 @@
-# UGAHacksX
+# Compound Interest Calculator 
 
 # Read Me
 
