@@ -15,7 +15,7 @@ This project aims to develop a user-friendly web application that allows users t
 Users will enter the principal, appreciation, monthly contribution, and years invested. Additionally, users may enter a percent of depreciation if they want to account for factors like inflation. The website will then generate a graph showing the growth of their imaginary funds over the given period of time.  
 
 ## Tools Utilized
-- **Programming Languages:** Java, HTML, CSS, JavaScript 
+- **Programming Languages:** Java, HTML, CSS, JavaScript, TypeScript 
 - **Frameworks:** React, Spring Boot 
 - **Version Control:** Git, GitHub
 - **Hosting:** Github Pages 
