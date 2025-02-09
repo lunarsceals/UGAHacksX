@@ -10,6 +10,38 @@ public class monthlyValue {
     double depreciatedValue;
     int month;
 
+    public double getTotalPrincipal() {
+        return this.totalPrincipal;
+    }
+
+    public void setTotalPrincipal(double totalPrincipal) {
+        this.totalPrincipal = totalPrincipal;
+    }
+
+    public double getTotalValue() {
+        return this.totalValue;
+    }
+
+    public void setTotalValue(double totalValue) {
+        this.totalValue = totalValue;
+    }
+
+    public double getDepreciatedValue() {
+        return this.depreciatedValue;
+    }
+
+    public void setDepreciatedValue(double depreciatedValue) {
+        this.depreciatedValue = depreciatedValue;
+    }
+
+    public int getMonth() {
+        return this.month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
     // Creates on object with depreciated values stored
     public monthlyValue(double totalPrincipal, double totalValue, double depreciatedValue, int month){
         this.month = month;
