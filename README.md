@@ -41,7 +41,7 @@ Users will enter the principal, appreciation, monthly contribution, and years in
 - [Maven](https://maven.apache.org/) - A Java build automation tool and dependency management system.
 
 ## Contributions
-- **Jacob Harris**: Backend Developer, Data Storage
-- **Bryant Monahan**: Backend Developer, Databse Interactions 
-- **Jeff Luo**: Frontend Developer, Graph Generation
-- **Daniel Fairchild**: Frontend Developer, Website Interactivity
+- **Jacob Harris:** Backend Developer, Data Storage
+- **Bryant Monahan:** Backend Developer, Databse Interactions 
+- **Jeff Luo:** Frontend Developer, Graph Generation
+- **Daniel Fairchild:** Frontend Developer, Website Interactivity
