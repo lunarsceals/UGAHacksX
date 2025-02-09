@@ -26,7 +26,7 @@ public class JsonApiApplication<MyData> {
     public ResponseEntity<String> getInvestmentWorth() {
        // double[] values = investmentService.createArrayOfWorth(5, 10, 1000, 100); // Example values
        // return ResponseEntity.ok(Arrays.asList(Arrays.stream(values).boxed().toArray(Double[]::new)));
-      // ObjectMapper mapper = new ObjectMapper();
+    //   ObjectMapper mapper = new ObjectMapper();
        monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
        String jsonString = null;
         for(int i = 0; i < values.length; i++){
@@ -36,11 +36,11 @@ public class JsonApiApplication<MyData> {
     }
 
     @GetMapping("/investmentWithDepreciation")
-    public ResponseEntity<String> getInvestmentWorthWithDepreciation() {
+    public monthlyValue[] getInvestmentWorthWithDepreciation() {
         monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
         //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
-        String jsonResponse = investmentService.createJsonObjectWithArray(values);
-        return ResponseEntity.ok(jsonResponse);
+        //String jsonResponse = investmentService.createJsonObjectWithArray(values);
+        return values;
     }
 
     // @PostMapping("/data")
