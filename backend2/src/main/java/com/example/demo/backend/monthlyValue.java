@@ -4,6 +4,7 @@ package com.example.demo.backend;
 // month of growth (I.E. the 11th month of growth). This should make it easier to store
 // data we plan to chart and send it to front end as JSON objects.
 public class monthlyValue {
+    
     double totalPrincipal;
     double totalValue;
     double depreciatedValue;
