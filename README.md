@@ -3,16 +3,16 @@
 # Read Me
 
 ## Team Members
-- Alice Johnson
-- Bob Smith
-- Charlie Davis
-- Dana Lee
+- Jacob Harris
+- Jeff Luo
+- Bryant Monahan 
+- Daniel Fairchild
 
 ## Purpose of the Project
-This project aims to develop a user-friendly web application that facilitates efficient task management and collaboration for teams. The goal is to enhance productivity and streamline communication within project teams.
+This project aims to develop a user-friendly web application that allows users to calculate earnings from a mutual fund. Our goal is to provide a fun interactive way to visualize the growth of funds, and also to educate users on the importance of investing early.
 
 ## Tools Utilized
-- **Programming Languages:** JavaScript, HTML, CSS
+- **Programming Languages:** Java, HTML, CSS
 - **Frameworks:** React, Node.js, Express
 - **Database:** MongoDB
 - **Version Control:** Git, GitHub
