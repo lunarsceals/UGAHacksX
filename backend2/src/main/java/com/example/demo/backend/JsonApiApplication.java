@@ -37,6 +37,9 @@ public class JsonApiApplication<MyData> {
     @GetMapping("/investmentWithDepreciation")
     public List<yearValue> getInvestmentWorthWithDepreciation() {
     monthlyValue[] monthlyValues = investmentService.calculateMonthlyValues(11,0,20,1000,100);
+    monthlyValue[] monthlyValues = InvestmentService.calculateMonthlyValues(11,0,20,1000,100);
+        //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
+        //String jsonResponse = investmentService.createJsonObjectWithArray(values);
     List<yearValue> yearlyValues = new ArrayList<yearValue>();
     int year = 0;
     for(int i = 0; i < monthlyValues.length; i++){
