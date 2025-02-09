@@ -1,9 +1,6 @@
 package com.example.demo.backend;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.*;
-
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,9 +26,6 @@ public class JsonApiApplication<MyData> {
 
     @GetMapping("/investment")
     public ResponseEntity<String> getInvestmentWorth() {
-       // double[] values = investmentService.createArrayOfWorth(5, 10, 1000, 100); // Example values
-       // return ResponseEntity.ok(Arrays.asList(Arrays.stream(values).boxed().toArray(Double[]::new)));
-      // ObjectMapper mapper = new ObjectMapper();
        monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
        String jsonString = null;
         for(int i = 0; i < values.length; i++){
@@ -43,15 +37,12 @@ public class JsonApiApplication<MyData> {
     @GetMapping("/investmentWithDepreciation")
     public List<yearValue> getInvestmentWorthWithDepreciation() {
     monthlyValue[] monthlyValues = investmentService.calculateMonthlyValues(11,0,20,1000,100);
-        //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
-        //String jsonResponse = investmentService.createJsonObjectWithArray(values);
     List<yearValue> yearlyValues = new ArrayList<yearValue>();
     int year = 0;
     for(int i = 0; i < monthlyValues.length; i++){
             yearlyValues.add(new yearValue((int)monthlyValues[i].totalValue, year));
             year++;
         }
-       // car Miata = new car("Miata", 1989);
         return yearlyValues;
     }
 
@@ -70,7 +61,7 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:3000") // The origin of your React app
+                        .allowedOrigins("http://localhost:3000") 
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
