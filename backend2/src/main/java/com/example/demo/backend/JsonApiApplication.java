@@ -1,7 +1,5 @@
 package com.example.demo.backend;
 
-import java.io.IOException;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootApplication
 @RestController
@@ -30,14 +26,12 @@ public class JsonApiApplication<MyData> {
     public ResponseEntity<String> getInvestmentWorth() {
        // double[] values = investmentService.createArrayOfWorth(5, 10, 1000, 100); // Example values
        // return ResponseEntity.ok(Arrays.asList(Arrays.stream(values).boxed().toArray(Double[]::new)));
-       ObjectMapper mapper = new ObjectMapper();
+      // ObjectMapper mapper = new ObjectMapper();
        monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
        String jsonString = null;
-       try {
-        jsonString = mapper.writeValueAsString(values[11]);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+        for(int i = 0; i < values.length; i++){
+            jsonString += ("Month " + values[i].month + " Total: " + values[i].totalValue + "\n");
+            }
         return ResponseEntity.ok(jsonString);
     }
 
