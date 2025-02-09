@@ -13,7 +13,7 @@ This project aims to develop a user-friendly web application that allows users t
 
 ## Tools Utilized
 - **Programming Languages:** Java, HTML, CSS, JavaScript 
-- **Frameworks:** React, Springboot 
+- **Frameworks:** React, Spring Boot 
 - **Version Control:** Git, GitHub
 - **Hosting:** Github Pages 
 
@@ -22,16 +22,17 @@ This project aims to develop a user-friendly web application that allows users t
    - **Problem:** Initial difficulty sending data/ utilzing methods from the backend to the frontend/backend to the frontend.
    - **Solution:** The team used a file to save data and format it as a JSON for frontend to read.
 
-2. **Database Performance:**
-   - **Problem:** Slow query performance in MongoDB during peak usage.
-   - **Solution:** Implemented indexing for frequently queried fields and optimized the database schema, significantly improving performance.
+2. **Creating JSON Objects:**
+   - **Problem:** JSON objects had too much information and was difficult for frontend coders to re compile.
+   - **Solution:** Created a new class that stores key values to make it easier to store data sent to front end as JSON objects.
 
-3. **Cross-Browser Compatibility:**
-   - **Problem:** Inconsistent styling and functionality across different browsers.
-   - **Solution:** Utilized cross-browser testing tools and applied appropriate CSS resets and polyfills to ensure consistent behavior.
+3. **Collaboration:**
+   - **Problem:** Struggled finding best means of working on the same class at once. Originally used Microsoft live server, but struggled with program crashing a 
+   code being lost.
+   - **Solution:** Turned to simply forking code from GitHub Repo to VSCode. Overcame issues of interfering with others' progress by clearly communicating what 
+   changes were being made.
 
 ## Public Frameworks Utilized
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
-- [Node.js](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8 JavaScript engine.
-- [Express](https://expressjs.com/) - A web application framework for Node.js.
-- [MongoDB](https://www.mongodb.com/) - A NoSQL database 
+- [React](https://reactjs.org) - A JavaScript library for building user interfaces.
+- [Spring Boot](https://spring.io/projects/spring-boot) - A Java framework for building stand-alone, production-ready applications.
+- [Maven](https://maven.apache.org/) - A Java build automation tool and dependency management system.
