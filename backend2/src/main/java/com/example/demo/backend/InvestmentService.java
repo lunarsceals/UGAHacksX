@@ -35,15 +35,19 @@ public class InvestmentService {
         return values;
     }
 
-    public String createJsonObjectWithArray(double[] values) {
+    public String createJsonObjectWithArray(monthlyValue[] values) {
         StringBuilder jsonArray = new StringBuilder();
         jsonArray.append("[");
 
+        int year = 0;
         for (int i = 0; i < values.length; i++) {
-            jsonArray.append(values[i]);
+            if(i+1 % 12 == 0){
+            jsonArray.append("Year: " + year + " ," + (int)values[i].totalValue);
+            year++;
             if (i < values.length - 1) {
                 jsonArray.append(",");
             }
+        }
         }
 
         jsonArray.append("]");

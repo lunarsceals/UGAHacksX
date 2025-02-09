@@ -1,3 +1,5 @@
+package com.example.demo.backend;
+
 // This class is used to store the totalPrincipal, totalInterest, totalValue, and the 
 // month of growth (I.E. the 11th month of growth). This should make it easier to store
 // data we plan to chart and send it to front end as JSON objects.
