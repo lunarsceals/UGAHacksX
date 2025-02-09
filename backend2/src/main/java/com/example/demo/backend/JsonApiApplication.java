@@ -1,7 +1,6 @@
 package com.example.demo.backend;
 
-import java.util.Arrays;
-import java.util.List;
+import java.io.IOException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootApplication
 @RestController
@@ -28,11 +27,18 @@ public class JsonApiApplication<MyData> {
     }
 
     @GetMapping("/investment")
-    public ResponseEntity<List<Double>> getInvestmentWorth() {
-        double[] values = investmentService.createArrayOfWorth(5, 10, 1000, 100); // Example values
-        // String jsonResponse = investmentService.createJsonObjectWithArray(values);
-        // return ResponseEntity.ok(jsonResponse);
-        return ResponseEntity.ok(Arrays.asList(Arrays.stream(values).boxed().toArray(Double[]::new)));
+    public ResponseEntity<String> getInvestmentWorth() {
+       // double[] values = investmentService.createArrayOfWorth(5, 10, 1000, 100); // Example values
+       // return ResponseEntity.ok(Arrays.asList(Arrays.stream(values).boxed().toArray(Double[]::new)));
+       ObjectMapper mapper = new ObjectMapper();
+       monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
+       String jsonString = null;
+       try {
+        jsonString = mapper.writeValueAsString(values[11]);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        return ResponseEntity.ok(jsonString);
     }
 
     @GetMapping("/investmentWithDepreciation")
