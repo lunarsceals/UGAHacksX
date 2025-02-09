@@ -2,6 +2,8 @@ package com.example.demo.backend;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.*;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,12 +41,16 @@ public class JsonApiApplication<MyData> {
     }
 
     @GetMapping("/investmentWithDepreciation")
-    public car getInvestmentWorthWithDepreciation() {
+    public List<yearValue> getInvestmentWorthWithDepreciation() {
         //monthlyValue[] values = investmentService.calculateMonthlyValues(11,0,20,1000,100);
         //double[] values = investmentService.createArrayOfWorthWithDepreciation(5, 10, 1000, 100, 2); // Example values
         //String jsonResponse = investmentService.createJsonObjectWithArray(values);
-        car Miata = new car("Miata", 1989);
-        return Miata;
+    List<yearValue> values = new ArrayList<yearValue>();
+    values.add(new yearValue(0, 1000));
+    values.add(new yearValue(1, 1100));
+    values.add(new yearValue(2, 1210));
+       // car Miata = new car("Miata", 1989);
+        return values;
     }
 
     // @PostMapping("/data")
